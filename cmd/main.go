@@ -18,4 +18,5 @@ func main() {
 	dao.NewPostRepository()
 	dao.NewReactionRepository()
 	dao.NewUserRepository()
+	dao.NewAuthRepository().Register()
 }

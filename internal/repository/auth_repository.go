@@ -1,6 +1,10 @@
 package repository
 
-import "gorm.io/gorm"
+import (
+	"fmt"
+
+	"gorm.io/gorm"
+)
 
 type AuthRepositoryI interface {
 	Register()
@@ -11,5 +15,6 @@ type authRepository struct {
 }
 
 func (a *authRepository) Register() {
-
+	fmt.Println("test")
+	// a.db.AutoMigrate(&entities.User{})
 }
