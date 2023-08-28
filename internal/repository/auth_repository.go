@@ -16,5 +16,5 @@ type authRepository struct {
 
 func (a *authRepository) Register() {
 	fmt.Println("test")
-	// a.db.AutoMigrate(&entities.User{})
+
 }

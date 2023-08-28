@@ -5,6 +5,7 @@ import (
 
 	"github.com/expose443/social-network/internal/db"
 	"github.com/expose443/social-network/internal/repository"
+	"github.com/expose443/social-network/internal/service"
 )
 
 func main() {
@@ -18,5 +19,8 @@ func main() {
 	dao.NewPostRepository()
 	dao.NewReactionRepository()
 	dao.NewUserRepository()
-	dao.NewAuthRepository().Register()
+	auth := dao.NewAuthRepository()
+	service := service.NewService(&dao)
+	service.NewAuthService(auth).Register()
+
 }
