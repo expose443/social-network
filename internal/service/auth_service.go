@@ -7,9 +7,9 @@ type AuthServiceI interface {
 }
 
 type authService struct {
-	repo repository.AuthRepositoryI
+	authRepo repository.AuthRepositoryI
 }
 
 func (a *authService) Register() {
-	a.repo.Register()
+	a.authRepo.Register()
 }

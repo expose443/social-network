@@ -14,13 +14,9 @@ func main() {
 		log.Fatal(err)
 	}
 	dao := repository.NewRepository(db)
-	dao.NewAuthRepository()
-	dao.NewCommentRepository()
-	dao.NewPostRepository()
-	dao.NewReactionRepository()
-	dao.NewUserRepository()
-	auth := dao.NewAuthRepository()
-	service := service.NewService(&dao)
-	service.NewAuthService(auth).Register()
+
+	userCase := service.NewService(&dao)
+	authService := userCase.NewAuthService(&dao)
+	authService.Register()
 
 }
